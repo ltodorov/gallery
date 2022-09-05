@@ -35,7 +35,7 @@ function readTemplate(path: PathLike): Promise<string> {
 
 function getItem(file: string) {
     return `<a href="${file}" download>
-        <img src="${file}" alt="" />
+        <img src="${file}" alt="" loading="lazy" />
     </a>`
 }
 
@@ -43,7 +43,9 @@ Promise.all([
     readDir(assetsDir),
     readTemplate(sourceFile),
 ]).then(([files, data]) => {
-    const filesHtml = files.reduce((acc, file) => acc += getItem(file), "");
+    const filesHtml = files
+        .filter(file => file.toLowerCase().endsWith(".jpg"))
+        .reduce((acc, file) => acc += getItem(file), "");
     const html = data.replace("{{root}}", filesHtml);
     import("html-minifier-terser").then(async ({ minify }) => {
         const result = await minify(html, {
