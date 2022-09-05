@@ -44,8 +44,8 @@ Promise.all([
     readTemplate(sourceFile),
 ]).then(([files, data]) => {
     const filesHtml = files
-        .filter(file => file.toLowerCase().endsWith(".jpg"))
-        .reduce((acc, file) => acc += getItem(file), "");
+        .reduce((acc, file) => file.toLowerCase().endsWith(".jpg") ?
+            acc + getItem(file) : acc, "");
     const html = data.replace("{{root}}", filesHtml);
     import("html-minifier-terser").then(async ({ minify }) => {
         const result = await minify(html, {
