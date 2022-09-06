@@ -3,9 +3,10 @@
   "private": "true",
   "version": "1.0.0",
   "description": "A script for generating static HTML photo galleries",
+  "type": "module",
   "scripts": {
-    "prestart": "tsc index.ts",
-    "start": "node index.js",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/ltodorov/gallery#readme",
   "devDependencies": {
+    "@tsconfig/node18-strictest-esm": "^1.0.1",
     "@types/html-minifier-terser": "^7.0.0",
     "@types/node": "^18.7.14",
     "html-minifier-terser": "^7.0.0",

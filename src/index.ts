@@ -2,7 +2,7 @@ import { readdir, readFile, writeFileSync, type PathLike } from "fs";
 import { resolve } from "path";
 
 const assetsDir = resolve("public");
-const sourceFile = resolve("index.html");
+const sourceFile = resolve("src", "index.html");
 const outputFile = resolve(assetsDir, "index.html");
 
 function logError(err: any) {
