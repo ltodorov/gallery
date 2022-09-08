@@ -1,6 +1,6 @@
 import { type PathLike, readdir } from "fs";
 
-function readDir(path: PathLike): Promise<string[]> {
+function getDir(path: PathLike): Promise<string[]> {
     return new Promise((resolve, reject) => {
         readdir(path, (err, files) => {
             if (err) {
@@ -12,5 +12,5 @@ function readDir(path: PathLike): Promise<string[]> {
 }
 
 export {
-    readDir
+    getDir
 };
