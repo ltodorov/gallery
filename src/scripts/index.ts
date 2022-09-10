@@ -1,6 +1,6 @@
 import { resolve } from "node:path";
+import { readdir } from "node:fs/promises";
 import { writeFileSync } from "node:fs";
-import { getDir } from "./getDir.js";
 import { getView } from "./getView.js";
 import { logError } from "./logError.js";
 
@@ -13,7 +13,7 @@ const videoFile = resolve(viewDir, "video.html");
 const outputFile = resolve(assetsDir, "index.html");
 
 Promise.all([
-    getDir(assetsDir),
+    readdir(assetsDir),
     getView(mainFile),
     getView(imageFile),
     getView(videoFile)

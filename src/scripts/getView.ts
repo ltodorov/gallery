@@ -1,15 +1,9 @@
-import { type PathLike, readFile } from "node:fs";
+import type { PathLike } from "node:fs";
+import { readFile } from "node:fs/promises";
 
 function getView(path: PathLike): Promise<string> {
-    return new Promise((resolve, reject) => {
-        readFile(path, {
-            encoding: "utf-8"
-        }, (err, data) => {
-            if (err) {
-                return reject(err);
-            }
-            return resolve(data);
-        });
+    return readFile(path, {
+        encoding: "utf-8"
     });
 }
 
