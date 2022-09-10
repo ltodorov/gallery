@@ -1,6 +1,5 @@
 import { resolve } from "node:path";
 import { readdir } from "node:fs/promises";
-import { writeFileSync } from "node:fs";
 import { getView } from "./getView.js";
 import { logError } from "./logError.js";
 
@@ -18,26 +17,29 @@ Promise.all([
     getView(imageFile),
     getView(videoFile)
 ]).then(([files, main, image, video]) => {
+    const views: Record<string, string> = {
+        "jpeg": image,
+        "jpg": image,
+        "mp4": video
+    };
     const filesHtml = files.reduce((acc, file) => {
-        const views: Record<string, string> = {
-            "jpg": image,
-            "mp4": video
-        };
         const fileExtension = file.split(".").pop();
-        return fileExtension && Object.hasOwn(views, fileExtension) ?
-            acc + views[fileExtension]?.replace(/{{file}}/g, file) :
+        const view = fileExtension && views[fileExtension];
+        return view ?
+            acc + view.replace(/{{file}}/g, file) :
             acc;
     }, "");
-    const html = main.replace("{{root}}", filesHtml);
+    const html = main.replace(/{{root}}/g, filesHtml);
     import("html-minifier-terser").then(async ({ minify }) => {
-        const result = await minify(html, {
-            collapseInlineTagWhitespace: true,
-            collapseWhitespace: true,
-            minifyCSS: true,
-            minifyJS: true,
-            removeComments: true
-        });
         try {
+            const result = await minify(html, {
+                collapseInlineTagWhitespace: true,
+                collapseWhitespace: true,
+                minifyCSS: true,
+                minifyJS: true,
+                removeComments: true
+            });
+            const { writeFileSync } = await import("node:fs");
             writeFileSync(outputFile, result);
             console.log(result);
         } catch (err) {
