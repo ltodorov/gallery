@@ -1,4 +1,4 @@
-import { type PathLike, readFile } from "fs";
+import { type PathLike, readFile } from "node:fs";
 
 function getView(path: PathLike): Promise<string> {
     return new Promise((resolve, reject) => {

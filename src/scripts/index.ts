@@ -1,5 +1,5 @@
-import { resolve } from "path";
-import { writeFileSync } from "fs";
+import { resolve } from "node:path";
+import { writeFileSync } from "node:fs";
 import { getDir } from "./getDir.js";
 import { getView } from "./getView.js";
 import { logError } from "./logError.js";

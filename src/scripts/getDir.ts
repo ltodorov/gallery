@@ -1,4 +1,4 @@
-import { type PathLike, readdir } from "fs";
+import { type PathLike, readdir } from "node:fs";
 
 function getDir(path: PathLike): Promise<string[]> {
     return new Promise((resolve, reject) => {
