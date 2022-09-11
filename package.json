@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "A script for generating static HTML photo and video galleries",
   "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "compile": "tsc",
     "build": "node dist/index.js",
