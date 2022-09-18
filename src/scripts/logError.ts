@@ -1,4 +1,4 @@
-function logError(err: any) {
+function logError(err: unknown) {
     console.error(err);
 }
 

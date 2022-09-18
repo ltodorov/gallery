@@ -10,5 +10,8 @@ The Gallery is a script for generating a static HTML page that allows easier sha
 2. Run `npm run build` to create `index.html` in the `public` folder.
 3. Deploy the content of the `public` folder.
 
+## Linter
+1. Run `npm run lint` to find problems in the source code.
+
 ## All in one
-`npm run all` - runs both `compile` and `build` scripts.
+`npm run all` - runs `lint`, `compile` and `build` scripts.
