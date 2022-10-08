@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 import { readdir } from "node:fs/promises";
 import { getView } from "./getView.js";
 import { logError } from "./logError.js";
+import { getRootHtml } from "./getRootHtml.js";
 
 const assetsDir = resolve("public");
 const sourceDir = resolve("src");
@@ -29,7 +30,7 @@ Promise.all([
             acc + view.replace(/{{file}}/g, file) :
             acc;
     }, "");
-    const html = main.replace(/{{root}}/g, filesHtml);
+    const html = main.replace(/{{root}}/g, getRootHtml(filesHtml));
     import("html-minifier-terser").then(async ({ minify }) => {
         try {
             const result = await minify(html, {
