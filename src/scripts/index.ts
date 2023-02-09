@@ -17,7 +17,7 @@ Promise.all([
     getView(mainFile),
     getView(imageFile),
     getView(videoFile)
-]).then(([files, main, image, video]) => {
+]).then(async ([files, main, image, video]) => {
     const views: Record<string, string> = {
         "jpeg": image,
         "jpg": image,
@@ -31,20 +31,15 @@ Promise.all([
             acc;
     }, "");
     const html = main.replace(/{{root}}/g, getRootHtml(filesHtml));
-    import("html-minifier-terser").then(async ({ minify }) => {
-        try {
-            const result = await minify(html, {
-                collapseInlineTagWhitespace: true,
-                collapseWhitespace: true,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: true
-            });
-            const { writeFileSync } = await import("node:fs");
-            writeFileSync(outputFile, result);
-            console.log(result);
-        } catch (err) {
-            logError(err);
-        }
-    }).catch(logError);
+    const { minify } = await import("html-minifier-terser");
+    const result = await minify(html, {
+        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true
+    });
+    const { writeFile } = await import("node:fs/promises");
+    await writeFile(outputFile, result);
+    console.log(result);
 }).catch(logError);
