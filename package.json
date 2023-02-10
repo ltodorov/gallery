@@ -13,7 +13,7 @@
     "compile": "tsc",
     "build": "node dist/index.js",
     "lint": "eslint --ext .ts src",
-    "all": "npm run lint && npm run compile && npm run build",
+    "all": "pnpm lint && pnpm compile && pnpm build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
