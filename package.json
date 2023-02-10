@@ -5,9 +5,11 @@
   "description": "A script for generating static HTML photo and video galleries",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=18",
+    "pnpm": ">=7"
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "compile": "tsc",
     "build": "node dist/index.js",
     "lint": "eslint --ext .ts src",
