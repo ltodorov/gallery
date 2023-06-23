@@ -27,15 +27,15 @@
   },
   "homepage": "https://github.com/ltodorov/gallery#readme",
   "devDependencies": {
-    "@tsconfig/esm": "^1.0.2",
-    "@tsconfig/node-lts": "^18.12.1",
-    "@tsconfig/strictest": "^2.0.0",
+    "@tsconfig/esm": "^1.0.3",
+    "@tsconfig/node-lts": "^18.12.2",
+    "@tsconfig/strictest": "^2.0.1",
     "@types/html-minifier-terser": "^7.0.0",
-    "@types/node": "^18.15.10",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "eslint": "^8.36.0",
-    "html-minifier-terser": "^7.1.0",
-    "typescript": "^5.0.2"
+    "@types/node": "^18.16.18",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "html-minifier-terser": "^7.2.0",
+    "typescript": "^5.0.4"
   }
 }
