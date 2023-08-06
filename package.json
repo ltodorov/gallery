@@ -31,10 +31,10 @@
     "@tsconfig/node-lts": "^18.12.3",
     "@tsconfig/strictest": "^2.0.1",
     "@types/html-minifier-terser": "^7.0.0",
-    "@types/node": "^18.16.19",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.44.0",
+    "@types/node": "^18.17.3",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
     "html-minifier-terser": "^7.2.0",
     "typescript": "^5.1.6"
   }
