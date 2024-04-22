@@ -6,14 +6,16 @@
   "type": "module",
   "engines": {
     "node": ">=18",
-    "pnpm": ">=8"
+    "pnpm": ">=9"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "compile": "tsc",
     "build": "node dist/index.js",
-    "lint": "eslint --ext .ts src",
-    "all": "pnpm lint && pnpm compile && pnpm build",
+    "lint": "biome lint --apply .",
+    "format": "biome format --write .",
+    "check": "biome check --apply .",
+    "all": "pnpm check && pnpm compile && pnpm build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +29,7 @@
   },
   "homepage": "https://github.com/ltodorov/gallery#readme",
   "devDependencies": {
+    "@biomejs/biome": "^1.7.0",
     "@tsconfig/node-lts": "^20.1.0",
     "@tsconfig/strictest": "^2.0.2",
     "@types/html-minifier-terser": "^7.0.2",

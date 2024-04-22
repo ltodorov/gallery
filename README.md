@@ -13,5 +13,8 @@ The Gallery is a script for generating a static HTML page that allows easier sha
 ## Linter
 1. Run `pnpm lint` to find problems in the source code.
 
+## Format
+1. Run `pnpm format` to format the source code.
+
 ## All in one
-`pnpm all` - runs `lint`, `compile` and `build` scripts.
+`pnpm all` - runs `lint`, `format`, `compile` and `build` scripts.
