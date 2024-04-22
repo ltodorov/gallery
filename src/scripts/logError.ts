@@ -1,7 +1,5 @@
 function logError(err: unknown) {
-    console.error(err);
+    console.error(err)
 }
 
-export {
-    logError
-};
+export { logError }

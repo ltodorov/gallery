@@ -6,7 +6,5 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": [
-    "src/scripts"
-  ]
+  "include": ["src/scripts"]
 }
