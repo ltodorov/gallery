@@ -1,4 +1,4 @@
-import { readdir } from "node:fs/promises"
+import { readdir, writeFile } from "node:fs/promises"
 import { resolve } from "node:path"
 import { getRootHtml } from "./getRootHtml.js"
 import { getView } from "./getView.js"
@@ -38,7 +38,6 @@ Promise.all([
             minifyJS: true,
             removeComments: true,
         })
-        const { writeFile } = await import("node:fs/promises")
         await writeFile(outputFile, result)
         console.log(result)
     })
