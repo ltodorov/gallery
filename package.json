@@ -8,6 +8,7 @@
     "node": ">=18",
     "pnpm": ">=9"
   },
+  "packageManager": "pnpm@9.0.6+sha1.648f6014eb363abb36618f2ba59282a9eeb3e879",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "compile": "tsc",
@@ -30,15 +31,15 @@
   },
   "homepage": "https://github.com/ltodorov/gallery#readme",
   "devDependencies": {
-    "@biomejs/biome": "^1.7.0",
-    "@tsconfig/node-lts": "^20.1.0",
-    "@tsconfig/strictest": "^2.0.2",
+    "@biomejs/biome": "^1.7.3",
+    "@tsconfig/node-lts": "^20.1.3",
+    "@tsconfig/strictest": "^2.0.5",
     "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^20.10.4",
-    "@vitest/coverage-v8": "^1.5.0",
+    "@types/node": "^20.13.0",
+    "@vitest/coverage-v8": "^1.6.0",
     "html-minifier-terser": "^7.2.0",
-    "lefthook": "^1.6.10",
-    "typescript": "^5.3.3",
-    "vitest": "^1.5.0"
+    "lefthook": "^1.6.14",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   }
 }
