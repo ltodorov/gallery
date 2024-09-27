@@ -26,7 +26,7 @@ Promise.all([
         }
         const filesHtml = files.reduce((acc, file) => {
             const fileExtension = file.split(".").pop()
-            const view = fileExtension && views[fileExtension]
+            const view = fileExtension && views[fileExtension.toLowerCase()]
             return view ? acc + view.replace(/{{file}}/g, file) : acc
         }, "")
         const html = main.replace(/{{root}}/g, getRootHtml(filesHtml))
