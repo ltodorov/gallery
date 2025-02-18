@@ -35,11 +35,16 @@
     "@tsconfig/node-lts": "^22.0.1",
     "@tsconfig/strictest": "^2.0.5",
     "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^22.10.10",
-    "@vitest/coverage-v8": "^3.0.4",
+    "@types/node": "^22.13.4",
+    "@vitest/coverage-v8": "^3.0.6",
     "html-minifier-terser": "^7.2.0",
     "lefthook": "^1.10.10",
     "typescript": "^5.7.3",
-    "vitest": "^3.0.4"
+    "vitest": "^3.0.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild@<=0.24.2": ">=0.25.0"
+    }
   }
 }
