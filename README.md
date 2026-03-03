@@ -16,5 +16,8 @@ The Gallery is a script for generating a static HTML page that allows easier sha
 ## Format
 1. Run `pnpm format` to format the source code.
 
+## Update
+1. Run `pnpm update:biome` to migrate your Biome configuration to the latest version.
+
 ## All in one
 `pnpm all` - runs `lint`, `format`, `compile` and `build` scripts.
