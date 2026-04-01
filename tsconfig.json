@@ -4,7 +4,10 @@
     "@tsconfig/node-lts/tsconfig.json"
   ],
   "compilerOptions": {
-    "outDir": "dist"
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": ["es2024", "DOM"],
+    "types": ["node"]
   },
   "include": ["src/scripts"]
 }
