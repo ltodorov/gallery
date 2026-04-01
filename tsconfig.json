@@ -4,10 +4,11 @@
     "@tsconfig/node-lts/tsconfig.json"
   ],
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": "src/scripts",
     "outDir": "dist",
     "lib": ["es2024", "DOM"],
     "types": ["node"]
   },
-  "include": ["src/scripts"]
+  "include": ["src/scripts"],
+  "exclude": ["**/__tests__"]
 }
