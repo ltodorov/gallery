@@ -12,6 +12,6 @@ pre-commit:
       glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts,json,yml,yaml,md}"
       run: pnpm --silent oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
-    typescript-build:
+    typescript:
       glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
-      run: pnpm --silent build
+      run: pnpm --silent compile

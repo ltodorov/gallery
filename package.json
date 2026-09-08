@@ -18,8 +18,8 @@
     "preinstall": "npx only-allow pnpm",
     "clean": "rimraf dist public/index.html",
     "compile": "tsc",
+    "prebuild": "pnpm clean && pnpm compile",
     "build": "node dist/index.js",
-    "generate": "pnpm clean && pnpm compile && pnpm build",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt --check",
@@ -27,7 +27,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "check": "pnpm lint && pnpm format && pnpm coverage",
-    "all": "pnpm check && pnpm generate"
+    "all": "pnpm check && pnpm build"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.1",
