@@ -1,10 +1,17 @@
+output:
+  - summary
+  - meta
 pre-commit:
+  parallel: true
   commands:
-    check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: ./scripts/hooks.sh pnpm exec biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
-pre-push:
-  commands:
-    check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: ./scripts/hooks.sh pnpm exec biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
+    oxlint:
+      glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
+      run: pnpm --silent oxlint --type-aware {staged_files}
+      stage_fixed: true
+    oxfmt:
+      glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts,json,yml,yaml,md}"
+      run: pnpm --silent oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    typescript-build:
+      glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
+      run: pnpm --silent build
