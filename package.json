@@ -31,21 +31,21 @@
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.1",
-    "@tsconfig/strictest": "^2.0.8",
+    "@tsconfig/strictest": "^2.0.9",
     "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^24.13.6",
-    "@vitest/coverage-v8": "^5.0.1",
+    "@types/node": "^24.19.2",
+    "@vitest/coverage-v8": "^5.1.0",
     "html-minifier-terser": "^7.2.0",
-    "lefthook": "^2.1.14",
-    "oxfmt": "^0.68.0",
-    "oxlint": "^1.83.0",
-    "rimraf": "^6.1.3",
+    "lefthook": "^2.2.2",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "rimraf": "^6.1.4",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.1"
+    "vitest": "^5.1.0"
   },
   "engines": {
     "node": ">=24",
     "pnpm": ">=12"
   },
-  "packageManager": "pnpm@12.5.1"
+  "packageManager": "pnpm@12.22.0+sha512.894940a3d9a57dfa6fd373990fb4e41e09c2f2d76d982ed1d75275d39267f988fb4e2d40900cbe9921c68d97c67aa1a1096d276633db248f7b34927ac9ddb7a4"
 }
